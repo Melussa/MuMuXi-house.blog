@@ -1,0 +1,154 @@
+
+		.confirm-hide{
+			display: none;
+		}
+		.confirm {
+		    position: fixed;
+		    z-index: 1000;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    margin: 0;
+		    overflow: hidden;
+		}
+		.confirm-modal {
+		    position: absolute;
+		    z-index: 1002;
+		    top: 50%;
+		    left: 50%;
+		    width: 480px;
+		    height: 200px;
+		    border: 1px solid #e9e9e9;
+		    margin: -101px 0 0 -241px;
+		    box-shadow: 0 0 12px #CCC;
+		    background-color: #FFF;
+		    -moz-animation: scale 0.4s 1 ease-out;
+		    -webkit-animation: scale 0.4s 1 ease-out;
+		    animation: scale 0.4s 1 ease-out;
+		    overflow: hidden;
+		}
+		.confirm-modal-hd, .confirmTips-modal-hd {
+		    position: relative;
+		    z-index: 1;
+		    margin: 0 auto;
+		    height: 40px;
+		    line-height: 40px;
+		    background-color: #F8F8F8;
+		    overflow: hidden;
+		}
+		.confirm-modal-title {
+		    position: relative;
+		    z-index: 1;
+		    margin: 0 auto;
+		    padding: 0 15px;
+		    font-size: 16px;
+		    font-weight: normal;
+		    text-align: center;
+		    color: #696969;
+		    overflow: hidden;
+		}
+		.confirm-modal-close {
+		    position: absolute;
+		    z-index: 2;
+		    top: 0;
+		    right: 0;
+		    width: 40px;
+		    height: 40px;
+		    font-size: 24px;
+		    line-height: 40px;
+		    text-align: center;
+		    color: #696969;
+		    cursor: pointer;
+		    overflow: hidden;
+		}
+		.confirm-modal-bd {
+		    margin: 0 auto;
+		    height: 79px;
+		    padding: 0 30px;
+		    overflow: hidden;
+		}
+		.confirm-modal-text {
+		    margin: 22px auto 5px;
+		    height: 40px;
+		    line-height: 40px;
+		    font-size: 14px;
+		    text-align: center;
+		    overflow: hidden;
+		}
+		.confirm-modal-ft {
+		    margin: 0 auto;
+		    height: 30px;
+		    text-align: center;
+		    padding: 25px 10px;
+		    overflow: hidden;
+		}
+		.confirm-button, .confirmTips-button {
+		    display: inline-block;
+		    margin: 0 10px;
+		    width: 50px;
+		    text-align: center;
+		    padding: 0 15px;
+		    height: 28px;
+		    line-height: 28px;
+		    cursor: pointer;
+		    border: 1px solid #E8E8E8;
+		    background-color: #FFF;
+		    color: #888;
+		    border-radius: 3px;
+		    font-size: 14px;
+		    overflow: hidden;
+		}
+		.confirm-enter-button, .confirm-enter-button:hover {
+		    background-color: #63acd6;
+		    border: 1px solid #63acd6;
+		    margin: 0 0 0 10px;
+		    color: #FFF;
+		}
+		.confirm-overlay {
+		    position: absolute;
+		    z-index: 1001;
+		    top: 0;
+		    left: 0;
+		    width: 100%;
+		    height: 100%;
+		    margin: 0;
+		    background-color: #FFF;
+		    opacity: 0.3;
+		    overflow: hidden;
+		}
+		@-moz-keyframes scale {
+		    0% {
+		        -moz-transform: scale(0.6, 0.6);
+		    }
+		    50% {
+		        -moz-transform: scale(1.2, 1.2);
+		    }
+		    100% {
+		        -moz-transform: scale(1, 1);
+		    }
+		}
+
+		@-webkit-keyframes scale {
+		    0% {
+		        -webkit-transform: scale(0.6, 0.6);
+		    }
+		    50% {
+		        -webkit-transform: scale(1.2, 1.2);
+		    }
+		    100% {
+		        -webkit-transform: scale(1, 1);
+		    }
+		}
+
+		@keyframes scale {
+		    0% {
+		        transform: scale(0.6, 0.6);
+		    }
+		    50% {
+		        transform: scale(1.2, 1.2);
+		    }
+		    100% {
+		        transform: scale(1, 1);
+		    }
+		}

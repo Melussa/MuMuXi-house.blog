@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>提示框插件使用案例</title>
+	<link rel="stylesheet" href="confirm.css">
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		html,
+		body {
+		  background-color: #FFF;
+		  color: #333;
+		  font-family: "Microsoft YaHei UI", Arial, Georgia, sans-serif;
+		  min-width: 1160px;
+		  width: 100%;
+    	  height: 100%;
+		}
+		html {
+		  font-size: 100%;
+		  width: 100%;
+		}
+		.content{
+			padding: 10px 0;
+		}
+		.use-info{
+			width: 1200px;
+			margin:0 auto;
+			padding: 10px;
+			box-sizing: border-box;
+			box-shadow: 0 0 2px rgba(0,0,0,.3);
+			background-color: rgba(255,255,255,.3);
+		}
+		.title{
+			text-align: center;
+			font-size: 16px;
+			padding: 10px 0;
+		}
+		.content-items{
+			margin: 0 10px;
+		}
+		.content-items-msg{
+			font-size: 14px;
+			color: #353535;
+			font-weight: 900;
+			margin: 10px 0;
+		}
+		.content-items-details{
+			font-size: 14px;
+			padding: 15px 0;
+			box-sizing: border-box;
+			padding-left: 20px;
+			background-color: rgba(0,0,0,.1);
+		}
+		.content-items-code{
+			font-size: 16px;
+			color: green;
+			font-family: "consolas";
+			background-color: rgba(0,0,0,1);
+			padding: 10px 0;
+		}
+		.content-code-notes{
+			font-size: 16px;
+			color: orange;
+			margin-left: 20px;
+		}
+		.last-attention{
+			font-size: 14px;
+			margin: 10px 0;
+			color: #8700ff;
+		}
+		.testBtn{
+			outline-style: none;
+			background-color: #0094ff;
+			cursor: pointer;
+			border:none;
+			color: #fff;
+			padding: 10px;
+			border-radius: 5px;
+		}
+		.testBtn:hover,
+		.testBtn:active{
+			background-color: #0094ffba;
+			color: #f2f2f2;
+		}
+	</style>
+</head>
+<body>
+	<div class="content">
+		<div class="use-info">
+		<h1 class="title">使用说明</h1>
+		<div class="content-items">
+			<p class="content-items-msg"> 1、构建 </p>
+			<p class="content-items-details"> 下载confirm.js并引用,同时将confirm.css引入你需要使用该插件的页面或者是全局 </p>
+		</div>
+		<div class="content-items">
+			<p class="content-items-msg"> 2、调用方式 </p>
+			<p class="content-items-details"> 调用方式如下：</p>
+			<pre class="content-items-code">
+	plugin.confirm({
+	        title: '查看提示', <span class="content-code-notes">/* 按需填写 */</span>
+	        message: '是否关闭？',<span class="content-code-notes">/* 按需填写 */</span>
+	        buttons: [
+	            {
+	                text: '取消',
+	                callback: () => {<span class="content-code-notes">/* 此处回调按需书写即可 */</span>
+	                }
+	            },
+	            {
+	                text: '确定',
+	                callback: () => {<span class="content-code-notes">/* 此处回调按需书写即可 */</span>
+	                   
+	                }
+	            }
+	        ]
+	    });
+			</pre>
+		</div>
+		<div class="content-items">
+			<p class="content-items-msg"> 3、优点 </p>
+			<p class="content-items-details"> a、可根据自身实际使用需求，修改CSS 或者 JS 文件 </p>
+			<p class="content-items-details"> b、调用API简单易上手，切容易理解 </p>
+		</div>
+		<div class="content-items">
+			<p class="content-items-msg"> 4、example </p>
+			<button id="testBtn" class="testBtn"> 随机更换背景 </button>
+		</div>
+		<div class="last-attention">注意：楼主会抽空持续更新此插件，将此插件的功能丰富起来。</div>
+	</div>
+	
+	</div>
+	<script src="jquery-3.1.0.js"> </script>
+	<script src="confirm.js"></script>
+	<script>
+		var bodyBg = document.body;
+		var $testBtn = $('#testBtn');
+		var bgColor = [ './img/bg1.jpg','./img/bg2.jpg','./img/bg3.jpg','./img/bg4.jpg','./img/bg5.jpg','./img/bg6.jpg','./img/bg7.jpg','./img/bg8.jpg','./img/bg9.jpg','./img/bg10.jpg' ];
+		$testBtn.on('click',function () {
+			plugin.confirm({
+	            title: '随机更换背景', 
+	            message: '你确认要更换背景吗？',
+	            buttons: [
+	                {
+	                    text: '取 消',
+	                    callback: () => {
+	                    }
+	                },
+	                {
+	                    text: '确 认',
+	                    callback: () => {
+	                    	var index = parseInt(Math.random() * 10 );
+	                    	if( index > bgColor.length - 1 ){
+	                    		bodyBg.style.background = '#DBEDFF';
+	                    	}else{
+	                    		bodyBg.style.background = 'url('+ bgColor[index] +')';
+	                    	}
+	                    }
+	                }
+	            ]
+	        });
+		})
+	</script>
+</body>
+</html>
